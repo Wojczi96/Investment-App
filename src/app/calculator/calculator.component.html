@@ -1,0 +1,34 @@
+
+<form class="calc-wrapper" (ngSubmit)="onSubmit()">
+    <div class="input-group">
+        <p>
+            <label for="currrent-amount">Current Amount:</label>
+            <input type="text"
+            name="currrent-amount"
+            [(ngModel)]="enteredCurrent">
+        </p>
+        <p>
+            <label for="investment-amount">Investment Amount:</label>
+            <input type="text"
+            name="investment-amount"
+            [(ngModel)]="enteredInvesmtent">
+        </p>
+    </div>
+    <div class="input-group">
+        <p>
+            <label for="investment-years">Investment Years:</label>
+            <input type="text"
+            name="investment-years"
+            [(ngModel)]="enteredYears">
+        </p>
+        <p>
+            <label for="precents">Precents:</label>
+            <input type="text"
+            name="precents"
+            [(ngModel)]="enteredPrecent">
+        </p>
+    </div>
+    <p>
+        <button>Count!</button>
+    </p>
+</form>
