@@ -1,0 +1,50 @@
+<!-- @if(!results){
+    <p>Please enter value to calculator and press the button!</p>
+} @else {
+    <table>
+        <thead>
+            <th>
+                <tr>Years:</tr>
+                <tr>Current Amount:</tr>
+                <tr>Interest:</tr>
+                <tr>Full Amount:</tr>
+                
+            </th>
+        @for(result of results(); track result){
+            <th>
+                <tr>{{ result.year }}</tr>
+                <tr>{{ result.annualInvestment }}</tr>
+                <tr>{{ result.interest }}</tr>
+                <tr>{{ result.valueEndOfYear }}</tr>
+                
+            </th>
+        }
+        </thead>
+    </table>
+} -->
+@if(!results){
+    <p>Please enter some values and press "Calculate"</p>
+} @else {
+    <table>
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Investment Value</th>
+                <th>Interest (Year)</th>
+                <th>Total Interest</th>
+                <th>Invested Capital</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (result of results; track result.year){
+                <tr>
+                    <td>{{ result.year }}</td>
+                    <td>{{ result.valueEndOfYear | currency:"EUR" }}</td>
+                    <td>{{ result.interest | currency:"EUR" }}</td>
+                    <td>{{ result.totalInterest | currency:"EUR" }}</td>
+                    <td>{{ result.totalAmountInvested | currency:"EUR" }}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

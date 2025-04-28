@@ -11,23 +11,21 @@ import { Investment } from '../investment.model';
 })
 export class CalculatorComponent {
   @Output() calculate = new EventEmitter<Investment>()
-  enteredCurrent = signal('0')
-  enteredInvesmtent = signal('0')
-  enteredYears = signal('5')
-  enteredPrecent = signal('5')
-
+  enteredInitialInvestment = signal('0');
+  enteredAnnualInvestment = signal('0');
+  enteredExpectedReturn = signal('5');
+  enteredDuration = signal('10');
 
   onSubmit(){
     this.calculate.emit({
-      currentAmount: +this.enteredCurrent.set('0'),
-      investmentAmonut: +this.enteredInvesmtent.set('0'),
-      investmentYear: +this.enteredYears.set('5'),
-      precent: +this.enteredPrecent.set('5')
-    })
-    this.enteredCurrent;
-    this.enteredInvesmtent;
-    this.enteredYears;
-    this.enteredPrecent;
+      initialInvestment: +this.enteredInitialInvestment(), // + in this case changes a string value into a number value
+      annualInvestment: +this.enteredAnnualInvestment(),
+      expectedReturn: +this.enteredExpectedReturn(),
+      duration: +this.enteredDuration()
+    });
+    this.enteredInitialInvestment.set('0');
+    this.enteredAnnualInvestment.set('0');
+    this.enteredExpectedReturn.set('5');
+    this.enteredDuration.set('10');
   }
 }
-

@@ -1,2 +1,4 @@
 <app-header/>
-<app-calculator/>
+<app-calculator (calculate)="onCalculateResult($event)"/>
+<hr>
+<app-results [results]="resultData()"/>

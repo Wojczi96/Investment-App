@@ -1,6 +1,6 @@
 export interface Investment {
-    currentAmount: number;
-    investmentAmonut: number;
-    investmentYear: number;
-    precent: number;
+    initialInvestment: number,
+    annualInvestment: number,
+    expectedReturn: number,
+    duration: number
 }

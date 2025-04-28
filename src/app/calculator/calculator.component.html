@@ -1,34 +1,37 @@
-
-<form class="calc-wrapper" (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()">
     <div class="input-group">
         <p>
-            <label for="currrent-amount">Current Amount:</label>
-            <input type="text"
-            name="currrent-amount"
-            [(ngModel)]="enteredCurrent">
+            <label for="initial-investment">Initial investment</label>
+            <input id="initial-investment" 
+            type="number" 
+            name="initial-investment"
+            [(ngModel)]="enteredInitialInvestment">
         </p>
         <p>
-            <label for="investment-amount">Investment Amount:</label>
-            <input type="text"
-            name="investment-amount"
-            [(ngModel)]="enteredInvesmtent">
+            <label for="annual-investment">Annual investment</label>
+            <input id="annual-investment" 
+            type="number" 
+            name="annual-investment"
+            [(ngModel)]="enteredAnnualInvestment">
         </p>
     </div>
     <div class="input-group">
         <p>
-            <label for="investment-years">Investment Years:</label>
-            <input type="text"
-            name="investment-years"
-            [(ngModel)]="enteredYears">
+            <label for="expected-return">Expected Return</label>
+            <input id="expected-return" 
+            type="number" 
+            name="expected-return"
+            [(ngModel)]="enteredExpectedReturn">
         </p>
         <p>
-            <label for="precents">Precents:</label>
-            <input type="text"
-            name="precents"
-            [(ngModel)]="enteredPrecent">
+            <label for="duration">Duration</label>
+            <input id="duration" 
+            type="number" 
+            name="duration"
+            [(ngModel)]="enteredDuration">
         </p>
     </div>
     <p>
-        <button>Count!</button>
+        <button>Calculate</button>
     </p>
 </form>
